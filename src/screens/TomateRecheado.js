@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View, ScrollView, Image, FlatList} from 'react-native';
+import { Text, StyleSheet, View, ScrollView, Image, FlatList, Button, Linking} from 'react-native';
 
 
 const TomateRecheado = () => {
@@ -88,7 +88,6 @@ const TomateRecheado = () => {
 
         <FlatList 
                     data={ ingredientes }
-                    
                     renderItem={({item}) => {
                         return (
                             <View>
@@ -109,6 +108,14 @@ const TomateRecheado = () => {
         <View>
             <Text style={styles.contentText}>AMENO AMENO AMENO AMENO AMENO AMENO AMENO AMENO AMENO AMENO AMENO AMENO AMENO AMENO </Text>
         </View>
+
+         <Button
+                title="Video de tutorial de preparo"
+                onPress={() => {
+              Linking.openURL('https://www.youtube.com/watch?v=jQhkdheTWdw');
+            }}
+                style={styles.button}
+            />
         
     </View>
     );
@@ -143,7 +150,13 @@ const styles = StyleSheet.create({
         marginTop: 5,
         height:168,
         width:299,
-    }
+    },
+
+    button: {
+    marginVertical: 10,
+    
+  },
+
 });
 
 export default TomateRecheado;

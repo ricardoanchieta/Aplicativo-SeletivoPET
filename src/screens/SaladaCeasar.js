@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View, ScrollView, Image} from 'react-native';
+import { Text, StyleSheet, View, ScrollView, Image, Linking, Button } from 'react-native';
 
  
 const SaladaCeasar = () => {
@@ -35,6 +35,17 @@ const SaladaCeasar = () => {
             <Text style={styles.fonte}>* OBS: O molho é feito com a gema crua,
                  mas para os mis impressionados poderá ser utilizada a gema do ovo cozido e frio. </Text>
             <Text></Text>
+
+           <Button
+                title="Video de tutorial de preparo"
+                onPress={() => {
+              Linking.openURL('https://www.youtube.com/watch?v=u4NDlEJt2YM');
+            }}
+                style={styles.button}
+            />
+
+          
+
         </ScrollView>
     );
 };
@@ -59,6 +70,11 @@ const styles= StyleSheet.create({
     fonte: {
         fontSize: 18,
     },
+
+    button: {
+    marginVertical: 10,
+    
+  },
 
 });
 
